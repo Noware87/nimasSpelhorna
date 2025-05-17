@@ -1,5 +1,5 @@
 
-const socket = io();
+const socket = io('/', { transports: ['websocket'] });
 let roomId = '';
 let playerName = '';
 
