@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Sten – Sax – Påse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>✂️ Sten – Sax – Påse Online</h1>
+    <div id="setup">
+        <input id="roomId" placeholder="Rum-ID (ex: nimas1)">
+        <input id="playerName" placeholder="Ditt namn">
+        <select id="scoreSelect">
+            <option value="3">Först till 3</option>
+            <option value="5">Först till 5</option>
+            <option value="10">Först till 10</option>
+        </select>
+        <button onclick="createRoom()">Skapa rum</button>
+        <button onclick="joinRoom()">Gå med i rum</button>
+        <p id="error"></p>
+    </div>
+    <div id="game" style="display:none;">
+        <p id="status">Väntar på motståndare...</p>
+        <div id="choices">
+            <button onclick="makeChoice('rock')">🪨</button>
+            <button onclick="makeChoice('paper')">📄</button>
+            <button onclick="makeChoice('scissors')">✂️</button>
+        </div>
+        <p id="roundResult"></p>
+        <p id="scoreboard"></p>
+        <h2>Topplista</h2>
+        <ul id="highscores"></ul>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

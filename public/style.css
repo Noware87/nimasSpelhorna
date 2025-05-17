@@ -1,0 +1,31 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #d0eaff, #ffffff);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.menu h1 {
+  margin-bottom: 10px;
+}
+.links a {
+  display: block;
+  margin: 10px 0;
+  font-size: 24px;
+  text-decoration: none;
+  color: #0078D7;
+}
+.links a:hover {
+  text-decoration: underline;
+}

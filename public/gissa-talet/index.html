@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Gissa Talet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Gissa ett tal mellan 1 och 100</h1>
+    <input type="number" id="guessInput" min="1" max="100" placeholder="Din gissning" />
+    <button onclick="checkGuess()">Gissa</button>
+    <p id="feedback"></p>
+    <p id="attempts"></p>
+    <div id="submitScore" style="display:none;">
+      <input type="text" id="playerName" placeholder="Ditt namn">
+      <button onclick="submitHighscore()">Spara poäng</button>
+    </div>
+    <h2>Topplista</h2>
+    <ul id="highscores"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
