@@ -1,4 +1,3 @@
-
 const socket = io('/', { transports: ['websocket'] });
 let roomId = '';
 let playerName = '';
@@ -25,6 +24,7 @@ socket.on('startGame', (names) => {
     document.getElementById('status').textContent = "Motståndare ansluten! Välj sten, sax eller påse.";
     document.getElementById('roundResult').textContent = '';
     document.getElementById('scoreboard').textContent = '';
+    showGame();  // säkerställ att även andra spelaren ser spelet
 });
 
 function makeChoice(choice) {
@@ -44,7 +44,11 @@ socket.on('roundResult', ({ choices, scores, names }) => {
 });
 
 socket.on('gameOver', ({ winner }) => {
-    document.getElementById('status').textContent = winner === playerName ? "Du vann matchen!" : `${winner} vann matchen.`;
+    if (winner === playerName) {
+        document.getElementById('status').textContent = "🎉 Du vann matchen!";
+    } else {
+        document.getElementById('status').textContent = `😢 ${winner} vann matchen.`;
+    }
 });
 
 socket.on('opponentLeft', () => {
